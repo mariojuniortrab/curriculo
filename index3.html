@@ -1,0 +1,272 @@
+<html>
+<head>
+
+ 
+
+</head>
+<body>
+<!-- STEP ONE: Insert the onLoad event handler into your BODY tag  -->
+
+ 
+
+<BODY BGCOLOR="#000000">
+
+<!-- STEP TWO: Paste this code into the BODY of your HTML document  -->
+ <style type="text/css">
+
+ .estrelinha_1{
+ 	-webkit-border-radius: 125px;
+	-moz-border-radius: 125px;
+	border-radius: 125px;
+	-moz-box-shadow: 0 0 1px 1px #f9E48f;
+	-webkit-box-shadow: 0 0 1px 1px#f9E48f;
+	box-shadow: 0 0 1px 1px #f9E48f;
+	background: #FFF;
+	background-repeat: no-repeat;
+  	background-size: cover;
+ }
+
+ .estrelinha_2{
+ 	-webkit-border-radius: 125px;
+	-moz-border-radius: 125px;
+	border-radius: 125px;
+	-moz-box-shadow: 0 0 1px 1px #F55;
+	-webkit-box-shadow: 0 0 1px 1px#F55;
+	box-shadow: 0 0 1px 1px #F55;
+	background: #F55;
+	background-repeat: no-repeat;
+  	background-size: cover;
+ }
+
+ .estrelinha_3{
+ 	-webkit-border-radius: 125px;
+	-moz-border-radius: 125px;
+	border-radius: 125px;
+	-moz-box-shadow: 0 0 1px 1px #AAF;
+	-webkit-box-shadow: 0 0 1px 1px#AAF;
+	box-shadow: 0 0 1px 1px #AAF;
+	background: #AAF;
+	background-repeat: no-repeat;
+  	background-size: cover;
+ }
+
+ .estrelinha_4{
+ 	-webkit-border-radius: 125px;
+	-moz-border-radius: 125px;
+	border-radius: 125px;
+	-moz-box-shadow: 0 0 1px 1px #FFF;
+	-webkit-box-shadow: 0 0 1px 1px#FFF;
+	box-shadow: 0 0 1px 1px #FFF;
+	background: #f9E48f;
+	background-repeat: no-repeat;
+  	background-size: cover;
+ }
+
+ .estrelinha_5{
+ 	-webkit-border-radius: 125px;
+	-moz-border-radius: 125px;
+	border-radius: 125px;
+	-moz-box-shadow: 0 0 1px 1px #f9E48f;
+	-webkit-box-shadow: 0 0 1px 1px#f9E48f;
+	box-shadow: 0 0 1px 1px #f9E48f;
+	background: #fCEC9f;
+	background-repeat: no-repeat;
+  	background-size: cover;
+ }
+
+ .estrelinha_6{
+ 	-webkit-border-radius: 125px;
+	-moz-border-radius: 125px;
+	border-radius: 125px;
+	-moz-box-shadow: 0 0 1px 1px #f9E48f;
+	-webkit-box-shadow: 0 0 1px 1px#f9E48f;
+	box-shadow: 0 0 1px 1px #f9E48f;
+	background: #fCEC9f;
+	background-repeat: no-repeat;
+  	background-size: cover;
+ }
+
+ .estrelinha_7{
+ 	-webkit-border-radius: 125px;
+	-moz-border-radius: 125px;
+	border-radius: 125px;
+	-moz-box-shadow: 0 0 1px 1px #f9E48f;
+	-webkit-box-shadow: 0 0 1px 1px#f9E48f;
+	box-shadow: 0 0 1px 1px #f9E48f;
+	background: #fCEC9f;
+	background-repeat: no-repeat;
+  	background-size: cover;
+ }
+
+ .estrelinha_8{
+ 	-webkit-border-radius: 125px;
+	-moz-border-radius: 125px;
+	border-radius: 125px;
+	-moz-box-shadow: 0 0 1px 1px #f9E48f;
+	-webkit-box-shadow: 0 0 1px 1px#f9E48f;
+	box-shadow: 0 0 1px 1px #f9E48f;
+	background: #fCEC9f;
+	background-repeat: no-repeat;
+  	background-size: cover;
+ }
+
+ .estrelinha_9{
+ 	-webkit-border-radius: 125px;
+	-moz-border-radius: 125px;
+	border-radius: 125px;
+	-moz-box-shadow: 0 0 1px 1px #f9E48f;
+	-webkit-box-shadow: 0 0 1px 1px#f9E48f;
+	box-shadow: 0 0 1px 1px #f9E48f;
+	background: #fCEC9f;
+	background-repeat: no-repeat;
+  	background-size: cover;
+ }
+
+ </style>
+
+ 
+
+<SCRIPT language="JavaScript">
+var g_id 	= 0,
+hei_scr 	= window.innerHeight,
+wid_scr 	= window.innerWidth,
+y_scrl 		= window.pageYOffset,
+x_scrl 		= window.pageXOffset,
+rad_max		= Math.sqrt(wid_scr*wid_scr+hei_scr*hei_scr)/2,
+num_star 	= 500,
+estrelas	= new Array();
+
+var Estrela = function(){
+	var coe_tamanho = 0;
+	var altura		= 0;
+	var largura		= 0;
+	var id 			= g_id;
+	var x 			= Math.floor((Math.random()*wid_scr)+1);
+	var y 			= Math.floor((Math.random()*hei_scr)+1);
+	var r			= Math.random()*6.283;
+	var velocidade 	= Math.floor((Math.random()*1)+1);
+	//var velocidade 	= 10;
+	var nome 		= "estrela_";
+	var rad 		= 0;
+	var radi 		= 0;
+	var distancia	= 0;
+
+
+
+
+	this.getNomeId = function(){
+		return nome+id;
+	}
+
+	this.movimentar = function(sLeft, sTop){
+		document.getElementById(this.getNomeId()).style.top 	= sTop;
+	 	document.getElementById(this.getNomeId()).style.left 	= sLeft;
+	}
+
+	this.aproximar = function(sWdh, sHgt) {
+	  	document.getElementById(this.getNomeId()).style.width 	= sWdh;
+	  	largura = sWdh; 
+	 	document.getElementById(this.getNomeId()).style.height 	= sHgt;
+	 	altura = sHgt;
+
+	}
+
+	this.getWidth = function(){
+		return largura; 
+	}
+
+	this.getHeight = function(){
+		return altura;
+	}
+
+	this.getDirecao = function(){
+		if((x > (wid_scr/2) ) && (y > (hei_scr/2) )){
+			r = Math.floor(((Math.random()*1.9) + 1)*100)/100;
+		}
+
+		if((x < (wid_scr/2) ) && (y > (hei_scr/2) )){
+			r = Math.floor(((Math.random()*3.35) + 1)*100)/100;
+			r = r > 1.9? r : r + 1.9;
+		}
+
+		if((x < (wid_scr/2) ) && (y < (hei_scr/2) )){
+			r = Math.floor(((Math.random()*4.5) + 1)*100)/100;
+			r = r > 3.35? r : r + 3.35;
+		}
+
+		if((x > (wid_scr/2) ) && (y < (hei_scr/2) )){
+			r = Math.floor(((Math.random()*6.1) + 1)*100)/100;
+			r = r > 4.5? r : r + 4.5;
+		}
+
+	}
+
+	this.gerarEstrela = function(){
+		rad = Math.sqrt(Math.pow((y-hei_scr/2),2)+Math.pow((x-wid_scr/2),2))/rad_max*4+1;
+		
+		y 	= Math.floor((Math.random()*hei_scr)-4);
+		x 	= Math.floor((Math.random()*wid_scr)-4);
+		//y = hei_scr/2;
+		//x 	= wid_scr/2;
+		this.getDirecao();
+		j = Math.floor((Math.random()*4)+1);
+		this.aproximar(j,j);
+		this.movimentar(x+x_scrl,y+y_scrl);
+		 
+
+	}
+
+	this.moverEstrela = function(){
+		rad = Math.sqrt(Math.pow((y-hei_scr/2),2)+Math.pow((x-wid_scr/2),2))/rad_max*4+1;
+		y	+= Math.round(Math.sin(r)*rad*velocidade);
+		x	+= Math.round(Math.cos(r)*rad*velocidade);
+
+		if ((x > wid_scr-rad*2) || (y < 0 ) || (y > hei_scr-rad*2) || (x < 0)){
+			y 	= Math.floor((Math.random()*hei_scr)+1);
+			x 	= Math.floor((Math.random()*wid_scr)+1);
+			//y = hei_scr/2;
+			//x 	= wid_scr/2;
+			this.getDirecao();
+			this.aproximar(1,1);
+			this.movimentar(x+x_scrl,y+y_scrl);
+		 }else{
+		 	
+			this.aproximar(this.getWidth() + (velocidade/100),this.getHeight() + (velocidade/100));
+			radi	= rad;
+			this.movimentar(x+x_scrl,y+y_scrl);
+		} 
+	}
+	k = Math.floor((Math.random()*9)+1);
+	document.write("<div id="+this.getNomeId()+"  class = 'estrelinha_"+k+"' style='z-index:0; position:absolute; width:1;height:1;'></div>");
+
+	g_id++;
+
+	this.gerarEstrela();
+
+	
+}
+
+
+for (i = 0; i < num_star; i++){
+	estrelas[i] = new Estrela();
+}
+
+function start_star(){
+	i = Math.floor((Math.random()*num_star));
+	estrelas[i].moverEstrela();
+}
+
+starSpeed=setInterval('start_star()',300);
+
+
+</SCRIPT>
+
+
+ 
+
+ 
+
+<!-- Script Size:  3.79 KB -->
+
+</body>
+</html>
